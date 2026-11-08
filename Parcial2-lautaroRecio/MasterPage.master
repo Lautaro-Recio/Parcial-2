@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="Parcial2_lautaroRecio.MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asesoría Legal Global</title>
+    <link href="~/Content/estilos.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="navbar">
+            <div class="navbar-contenido">
+                <a href="Default.aspx" class="marca">
+                    <img src="Imagenes/logo2.png" alt="Logo Asesoría Legal Global" />
+                    <span>Asesoría Legal Global</span>
+                </a>
+
+                <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+                <label for="menu-toggle" class="menu-icono">&#9776;</label>
+
+                <nav class="enlaces">
+                    <asp:HyperLink ID="hlInicio" runat="server" NavigateUrl="~/Default.aspx" Text="Inicio"></asp:HyperLink>
+                    <asp:HyperLink ID="hlRegistro" runat="server" NavigateUrl="~/Registro.aspx" Text="Registrarse"></asp:HyperLink>
+                    <asp:HyperLink ID="hlLogin" runat="server" NavigateUrl="~/Login.aspx" Text="Iniciar sesión"></asp:HyperLink>
+                    <asp:HyperLink ID="hlDocumentos" runat="server" NavigateUrl="~/Documentos.aspx" Text="Mis documentos"></asp:HyperLink>
+                    <asp:Label ID="lblUsuario" runat="server" CssClass="usuario-nav"></asp:Label>
+                    <asp:LinkButton ID="lnkCerrar" runat="server" Text="Cerrar sesión" CssClass="cerrar" CausesValidation="False" OnClick="lnkCerrar_Click"></asp:LinkButton>
+                </nav>
+            </div>
+        </header>
+
+        <main class="contenido">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>
+
+        <footer class="pie">
+            <img src="Imagenes/logo1.png" alt="Logo Asesoría Legal Global" class="pie-logo" />
+            <p>&copy; 2026 Asesoría Legal Global - Todos los derechos reservados.</p>
+            <p class="pie-autor">Desarrollado por Lautaro Recio - Laboratorio de Programación 3</p>
+        </footer>
+    </form>
+</body>
+</html>
